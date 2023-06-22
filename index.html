@@ -4,7 +4,15 @@
     <title>IPA Signing Form</title>
 </head>
 <body>
-    <h2>IPA Signing Form</h2>
+    
+  <p>
+    Signed Status: (<span id="signed-status-free">[Signed Status]</span>)<br>
+    Cert Name: (<span id="cococloud-ios-cert">[Certificate Name]</span>)
+</p>
+
+
+  <script src="https://sign.cococloud-drive.com/cert-status/sign-status.js" defer></script>
+
     <form id="ipaForm">
         <label for="ipaUrl">IPA URL:</label>
         <input type="text" id="ipaUrl" name="ipaUrl">
