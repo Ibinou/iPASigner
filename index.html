@@ -1,77 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CocoCloud iPA Signer</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>IPA Signing Form</title>
 </head>
 <body>
-  <h1>iPA Signer</h1>
-  <form id="ipaForm">
-    <label for="ipaUrl">URL du fichier IPA :</label>
-    <input type="text" id="ipaUrl" required>
-    <button type="submit">Générer le lien</button>
-  </form>
+    <h2>IPA Signing Form</h2>
+    <form id="ipaForm">
+        <label for="ipaUrl">IPA URL:</label>
+        <input type="text" id="ipaUrl" name="ipaUrl">
+        <button type="submit">Sign and Install</button>
+    </form>
 
-  <div id="resultContainer" style="display: none;">
-    <h2>Résultat :</h2>
-    <a id="installLink" target="_blank" rel="noopener noreferrer"></a>
-  </div>
+    <div id="result" style="display: none;">
+        <h3>Installation Link:</h3>
+        <a id="installLink" target="_blank" rel="noopener noreferrer"></a>
+    </div>
 
-  <script>
-    document.getElementById("ipaForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  
-  var ipaUrl = document.getElementById("ipaUrl").value;
-  var apiUrl = "https://sign.cococloud-drive.com/free-signing?url=" + encodeURIComponent(ipaUrl);
-
-  var installLink = document.getElementById("installLink");
-  installLink.href = apiUrl;
-  installLink.textContent = "Installer l'application";
-  
-  document.getElementById("resultContainer").style.display = "block";
-});
-
-  </script>
-  <style>
-    body {
-  text-align: center;
-}
-
-h1 {
-  color: #333;
-}
-
-form {
-  margin-top: 50px;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-input[type="text"] {
-  width: 300px;
-  padding: 5px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#resultContainer {
-  margin-top: 50px;
-}
-
-#installLink {
-  font-size: 18px;
-  color: #337ab7;
-}
-
-  </style>
+    <script>
+        document.getElementById("ipaForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var ipaUrl = document.getElementById("ipaUrl").value;
+            var installLink = document.getElementById("installLink");
+            installLink.href = "https://sign.cococloud-drive.com/free-plist?url=" + encodeURIComponent(ipaUrl);
+            installLink.innerHTML = "Install App";
+            document.getElementById("result").style.display = "block";
+        });
+    </script>
 </body>
 </html>
