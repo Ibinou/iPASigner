@@ -2,26 +2,85 @@
 <html>
 <head>
     <title>IPA Signing Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        h3 {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #222;
+        }
+        
+        #result {
+            margin-top: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        
+        #installLink {
+            color: #0070c9;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    
-  <p>
-    Signed Status: (<span id="signed-status-free">[Signed Status]</span>)<br>
-    Cert Name: (<span id="cococloud-ios-cert">[Certificate Name]</span>)
-</p>
+    <div style="text-align: center; padding: 20px;">
+        <img src="https://www.apple.com/ac/globalnav/7/en_US/images/globalnav/apple/image_large.svg" alt="Apple Logo" height="50">
+    </div>
 
+    <div style="max-width: 400px; margin: 0 auto; background-color: #fff; padding: 30px;">
+        <h3 style="text-align: center;">IPA Signing Form</h3>
 
-  <script src="https://sign.cococloud-drive.com/cert-status/sign-status.js" defer></script>
+        <p>
+            Signed Status: (<span id="signed-status-free">[Signed Status]</span>)<br>
+            Cert Name: (<span id="cococloud-ios-cert">[Certificate Name]</span>)
+        </p>
 
-    <form id="ipaForm">
-        <label for="ipaUrl">IPA URL:</label>
-        <input type="text" id="ipaUrl" name="ipaUrl">
-        <button type="submit">Sign and Install</button>
-    </form>
+        <form id="ipaForm">
+            <label for="ipaUrl">IPA URL:</label><br>
+            <input type="text" id="ipaUrl" name="ipaUrl"><br><br>
+            <button type="submit">Sign and Install</button>
+        </form>
 
-    <div id="result" style="display: none;">
-        <h3>Installation Link:</h3>
-        <a id="installLink" target="_blank" rel="noopener noreferrer"></a>
+        <div id="result" style="display: none;">
+            <h3>Installation Link:</h3>
+            <a id="installLink" target="_blank" rel="noopener noreferrer"></a>
+        </div>
     </div>
 
     <script>
