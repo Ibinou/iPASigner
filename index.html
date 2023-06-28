@@ -60,7 +60,9 @@
 </head>
 <body>
 
-<script src="https://sign.cococloud-drive.com/cert-status/sign-status.js" defer></script>
+<script src="https://cococloud-signing.online/cert-status/sign-status.js" defer></script>
+
+
     <div style="max-width: 400px; margin: 0 auto; background-color: #fff; padding: 30px;">
 
         <p>
@@ -85,7 +87,7 @@
             event.preventDefault();
             var ipaUrl = document.getElementById("ipaUrl").value;
             var installLink = document.getElementById("installLink");
-            installLink.href = "https://sign.cococloud-drive.com/free-plist?url=" + encodeURIComponent(ipaUrl);
+            installLink.href ="https://cococloud-signing.online/free-plist?url=" + encodeURIComponent(ipaUrl);
             installLink.innerHTML = "Install App";
             document.getElementById("result").style.display = "block";
         });
