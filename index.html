@@ -87,7 +87,7 @@
             event.preventDefault();
             var ipaUrl = document.getElementById("ipaUrl").value;
             var installLink = document.getElementById("installLink");
-            installLink.href ="https://cococloud-signing.online/free-plist?url=" + encodeURIComponent(ipaUrl);
+            installLink.href = "https://cococloud-signing.online/free-plist?url=" + encodeURIComponent(ipaUrl);
             installLink.innerHTML = "Install App";
             document.getElementById("result").style.display = "block";
         });
